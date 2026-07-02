@@ -1,0 +1,8 @@
+.vscode/**
+**/*.map
+.gitignore
+PUBLISHING.md
+*.vsix
+node_modules/**
+.env
+.env.*

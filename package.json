@@ -1,0 +1,37 @@
+{
+  "name": "git-hook-guard",
+  "displayName": "Git Hook Guard",
+  "description": "Automatically scans opened Git repositories for malicious git hooks (remote-code-execution droppers) and lets you quarantine them before they can run.",
+  "version": "0.0.1",
+  "publisher": "muasif80",
+  "engines": { "vscode": "^1.70.0" },
+  "categories": ["Other", "Linters"],
+  "keywords": ["git", "hooks", "security", "malware", "supply chain", "contagious interview"],
+  "license": "MIT",
+  "repository": { "type": "git", "url": "https://github.com/muasif80/git-hook-guard.git" },
+  "bugs": { "url": "https://github.com/muasif80/git-hook-guard/issues" },
+  "homepage": "https://github.com/muasif80/git-hook-guard#readme",
+  "activationEvents": ["onStartupFinished"],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      { "command": "gitHookGuard.scan", "title": "Git Hook Guard: Scan Workspace for Malicious Hooks" },
+      { "command": "gitHookGuard.quarantine", "title": "Git Hook Guard: Quarantine Active Hooks in Workspace" }
+    ],
+    "configuration": {
+      "title": "Git Hook Guard",
+      "properties": {
+        "gitHookGuard.scanOnOpen": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically scan the workspace for malicious git hooks when a window/folder opens."
+        },
+        "gitHookGuard.flagAllActiveHooks": {
+          "type": "boolean",
+          "default": false,
+          "description": "Also warn about ANY active (non-.sample) hook, not only ones matching known danger patterns."
+        }
+      }
+    }
+  }
+}
