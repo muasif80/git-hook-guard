@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.0.2
+- Add extension icon.
+- Expand README with threat background, step-by-step protection, and usage.
+
 ## 0.0.1
 - Initial release.
 - Auto-scan opened Git repositories for malicious hooks on startup.
